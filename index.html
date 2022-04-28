@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body class="background">
+    <header>
+        <img class="icon logo" src="../images/logo_hour.svg" alt="Logo">
+        <h1 class="heading">BookASpace</h1>
+        <button class="head-but"><a href="main.html"><img alt="booking" class="func"
+                    src="../images/book.svg"></a></button>
+        <button class="head-but"><a href="my_page.html"><img alt="user" class="func"
+                    src="../images/user.svg"></a></button>
+        <div class="but">
+            <button>Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="main">
+
+            <h1 class="message">Here you can reserve an auditorium for your audience!</h1>
+            <h4 class="limit">*it is allowed to book for time f<div class="out">rom 1 hour to 5 day</div>s</h4>
+            <div class="line">
+                <div class="form">
+                    <form action="" method="post">
+                        <h3 class="heading">
+                            Book an auditorium
+                        </h3>
+                        <div class="data">
+                            <div class="field">
+                                <label for="audname"> Aud name </label>
+                                <input type="text" name="audname" required placeholder="RI-364">
+                            </div>
+                            <div class="field">
+                                <label for="from"> From </label>
+                                <input type="datetime-local" name="from" required>
+                            </div>
+                            <div class="field">
+                                <label for="to"> To </label>
+                                <input type="datetime-local" name="to" required>
+                            </div>
+                        </div>
+                        <div class="but-group">
+                            <button class="on-page" type="submit"> Book </button>
+                            <button class="on-page" type="submit"> Cancel </button>
+                        </div>
+                        <div class="note">
+                            Aren&#39;t you logged in? <a href="login.html">Log in</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="container">
+                    <div class="warpper">
+                        <input class="radio" id="one" name="group" type="radio" checked>
+                        <input class="radio" id="two" name="group" type="radio">
+                        <div class="status">
+                            <h2>
+                                <div class="situation">You can follow current auditoriums status</div>
+                                <div class="tabs">
+                                    <div class=" tip available">
+                                        <label class="tab" id="available-tab" for="one">
+                                            <h2 class="bookmark"><a>F<span class="hide"><br>r<br>e<br>e</span></a></h2>
+                                        </label>
+                                    </div>
+                                    <span class="or">or</span>
+                                    <div class="tip taken">
+                                        <label class="tab" id="taken-tab" for="two">
+                                            <h2 class="bookmark"><a>T<span class="hide"><br>a<br>k<br>e<br>n</span></a>
+                                            </h2>
+                                        </label>
+                                    </div>
+                                </div>
+                            </h2>
+                        </div>
+                        <div class="panels">
+                            <div class="cards" id="available-cards">
+                                <div class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: AR-432</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: KN-213</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: PTH-561</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: PZ-213</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: PZ-213</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: AR-432</h3>
+                                </div>
+                                <div class="cards" class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: KN-213</h3>
+                                </div>
+                                <div class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: PTH-561</h3>
+                                </div>
+                            </div>
+                            <div class="cards" id="taken-cards">
+                                <div class="card">
+                                    <div class="top">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <h3>Aud: AR-432</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </main>
+    <footer>
+        <p class="note">
+            ©2022 TakeASeat. All rights reserved
+        </p>
+        <img alt="Line" src="../images/line.svg">
+        <div class="social-media">
+            <img class="icon" alt="twitter" src="../images/twitter.svg">
+            <img class="icon" alt="facebook" src="../images/facebook.svg">
+            <img class="icon" alt="instagram" src="../images/instagram.svg">
+            <img class="icon" alt="linkedIn" src="../images/linkedin.svg">
+            <img class="icon" alt="youtube" src="../images/youtube.svg">
+        </div>
+
+    </footer>
+</body>
+
+</html>
