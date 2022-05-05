@@ -14,25 +14,25 @@
         <img class="icon logo" src="../images/logo_hour.svg" alt="Logo">
         <h1 class="heading" >BookASpace</h1>
         <div class="but-group">
-            <button>Login</button>
-            <button>Signup</button>
+            <button onClick="login()">Login</button>
+            <button onClick="signup()">Signup</button>
         </div>
     </header>
 
     <main >
         <div class="form">
-        <form action="" method="put">
+        <form id="login-form">
                 <h3 class="heading" >
                     Enter into an account
                 </h3>
                 <div class="data">
                 <div class="field">
                 <label for="username"> Username </label>
-                <input type="text" name="username" required placeholder="JaneDoe">
+                <input type="text" id="username" required placeholder="JaneDoe">
                 </div>
                 <div class="field">
                 <label for="password"> Password </label>
-                <input type="password" name="password" required placeholder="1111">
+                <input type="password" id="password" required placeholder="1111">
                 </div>
                 </div>
                 <button type="submit">Log in</button>
@@ -54,8 +54,8 @@
             <img class="icon" alt="linkedIn" src="../images/linkedin.svg">
             <img class="icon" alt="youtube" src="../images/youtube.svg">
         </div>
-
     </footer>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>

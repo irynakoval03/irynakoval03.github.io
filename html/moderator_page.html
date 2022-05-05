@@ -13,85 +13,28 @@
     <header>
         <img class="icon logo" src="../images/logo_hour.svg" alt="Logo">
         <h2 class="heading">BookASpace</h2>
-                        <button class="head-but"><img alt="booking" class="func" src="../images/book.svg"></button>
-                        <button class="head-but"><img alt="user" class="func" src="../images/user.svg"></button>
-
-                <div class="but">
-                    <button>Logout</button>
-                </div>
+        <div class="but">
+            <button onclick="logout()">Logout</button>
+        </div>
     </header>
 
     <main>
         <div class="presentation">
-            <h2 class="heading">
-                moderator
+            <h2 id="username" class="heading">
             </h2>
             <ul>
-                <li>Full name: Moderator</li>
-                <li>Email: moderator@gmail.com</li>
-                <li>Tel: +1 111111111</li>
+                <li>Full name: <span id="full-name"></span></li>
+                <li>Email: <span id="email"></span></li>
+                <li>Tel: <span id="phone"></span></li>
             </ul>
         </div>
-            <div class="desk">
-                <h2 class="heading">
-                    All Auditorium
-                </h2>
-                <div class="container">
-                    <div class="card">
-                        <div class="top">
-                            <div class="circle"></div>
-                            <button class="action"><img alt="delete" src="../images/delete-but.svg"></button>
-                        </div>
-                        <h3>Aud: AR-432</h3>
-                        <button class="action"><img alt="edit" src="../images/edit-but.svg"></button>
-                    </div>
-                    <div class="card">
-                        <div class="top">
-                            <div class="circle"></div>
-                            <button class="action"><img alt="delete" src="../images/delete-but.svg"></button>
-                        </div>
-                        <h3>Aud: KN-213</h3>
-                        <button class="action"><img alt="edit" src="../images/edit-but.svg"></button>
-                    </div>
-                    <div class="card">
-                        <div class="top">
-                            <div class="circle"></div>
-                            <button class="action"><img alt="delete" src="../images/delete-but.svg"></button>
-                        </div>
-                        <h3>Aud: PTH-561</h3>
-                        <button class="action"><img alt="edit" src="../images/edit-but.svg"></button>
-                    </div>
-                    <div class="card">
-                        <div class="top">
-                            <div class="circle"></div>
-                            <button class="action"><img alt="delete" src="../images/delete-but.svg"></button>
-                        </div>
-                        <h3>Aud: PZ-213</h3>
-                        <button class="action"><img alt="edit" src="../images/edit-but.svg"></button>
-                    </div>
-                    <div class="card">
-                        <div class="top">
-                            <div class="circle"></div>
-                            <button class="action"><img alt="delete" src="../images/delete-but.svg"></button>
-                        </div>
-                        <h3>Aud: PZ-213</h3>
-                        <button class="action"><img alt="edit" src="../images/edit-but.svg"></button>
-                    </div>
-                    <div class="card">
-                        <div class="top">
-                            <div class="circle"></div>
-                            <button class="action"><img alt="add" src="../images/add-but.svg"></button>
-                        </div>
-                        <div class="field">
-                            <label for="lastname">
-                                <h3>Aud name</h3>
-                            </label>
-                            <input type="text" name="lastname" required placeholder="AR-432">
-                        </div>
-                    </div>
-                    </form>
-                </div>
+        <div class="desk">
+            <h2 class="heading">
+                All Auditorium
+            </h2>
+            <div id ="cards" class="container">
             </div>
+        </div>
     </main>
     <footer>
         <p class="note">
@@ -99,14 +42,14 @@
         </p>
         <img alt="Line" src="../images/line.svg">
         <div class="social-media">
-            <img class="icon" alt="twitter" src="../images/twitter.svg">
-            <img class="icon" alt="facebook" src="../images/facebook.svg">
-            <img class="icon" alt="instagram" src="../images/instagram.svg">
-            <img class="icon" alt="linkedIn" src="../images/linkedin.svg">
-            <img class="icon" alt="youtube" src="../images/youtube.svg">
+            <img class="icon" alt="twitter" src="../images/twitter.svg"/>
+            <img class="icon" alt="facebook" src="../images/facebook.svg"/>
+            <img class="icon" alt="instagram" src="../images/instagram.svg"/>
+            <img class="icon" alt="linkedIn" src="../images/linkedin.svg"/>
+            <img class="icon" alt="youtube" src="../images/youtube.svg"/>
         </div>
-
     </footer>
+    <script src="/js/moderator_page.js"></script>
 </body>
 
 </html>

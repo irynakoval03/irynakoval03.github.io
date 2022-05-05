@@ -1,77 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <link rel="stylesheet" href="../css/login-signup.css">
-
-</head>
-
-<body class="background">
-    <header>
-        <img class="icon logo" src="../images/logo_hour.svg" alt="Logo">
-        <h1 class="heading">BookASpace</h1>
-        <div class="but-group">
-            <button>Login</button>
-            <button>Signup</button>
-        </div>
-    </header>
-
-    <main>
-        <div class="form">
-<form action="" method="post">
-    <h3 class="heading">
-        Create an account
-    </h3>
-    <div class="data">
-        <div class="field">
-            <label for="username"> Username </label>
-            <input type="text" name="username" required placeholder="JaneDoe">
-        </div>
-        <div class="field">
-            <label for="firstname"> First Name </label>
-            <input type="text" name="firstname" required placeholder="Jane">
-        </div>
-        <div class="field">
-            <label for="lastname"> Last Name </label>
-            <input type="text" name="lastname" required placeholder="Doe">
-        </div>
-        <div class="field">
-            <label for="email"> Email </label>
-            <input type="email" name="email" required placeholder="jane.doe@gmail.com">
-        </div>
-        <div class="field">
-            <label for="phone"> Phone number</label>
-            <input type="tel" name="phone" required placeholder="+1 8674895445">
-        </div>
-        <div class="field">
-            <label for="password"> Password </label>
-            <input type="password" name="password" required placeholder="1111">
-        </div>
-    </div>
-    <button type="submit">Sign up</button>
-    <div class="note">
-        Do you have already an account? <a href="login.html">Log in</a>
-    </div>
-</form>
-</div>
-    </main>
-    <footer>
-        <p class="note">
-            ©2022 TakeASeat. All rights reserved
-        </p>
-        <img alt="Line" src="../images/line.svg">
-        <div class="social-media">
-            <img class="icon" alt="twitter" src="../images/twitter.svg">
-            <img class="icon" alt="facebook" src="../images/facebook.svg">
-            <img class="icon" alt="instagram" src="../images/instagram.svg">
-            <img class="icon" alt="linkedIn" src="../images/linkedin.svg">
-            <img class="icon" alt="youtube" src="../images/youtube.svg">
-        </div>
+<html lang="en">   
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <link rel="stylesheet" href="../css/login-signup.css">
+    </head>
     
-    </footer>
-</body>
+    <body class="background">
+        <header>
+            <img class="icon logo" src="../images/logo_hour.svg" alt="Logo">
+            <h1 class="heading">BookASpace</h1>
+            <div class="but-group">
+                <button onClick="login()">Login</button>
+                <button onClick="signup()">Signup</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="form">
+                <form id="signup-form">
+                    <h3 class="heading">
+                        Create an account
+                    </h3>
+                    <div class="data">
+                        <div class="field">
+                            <label for="username"> Username </label>
+                            <input type="text" id="username" required placeholder="JaneDoe">
+                        </div>
+                        <div class="field">
+                            <label for="firstname"> First Name </label>
+                            <input type="text" id="firstname" required placeholder="Jane">
+                        </div>
+                        <div class="field">
+                            <label for="lastname"> Last Name </label>
+                            <input type="text" id="lastname" required placeholder="Doe">
+                        </div>
+                        <div class="field">
+                            <label for="email"> Email </label>
+                            <input type="email" id="email" required placeholder="jane.doe@gmail.com">
+                        </div>
+                        <div class="field">
+                            <label for="phone"> Phone number</label>
+                            <input type="tel" id="phone" required placeholder="+1 8674895445">
+                        </div>
+                        <div class="field">
+                            <label for="password"> Password </label>
+                            <input type="password" id="password" required placeholder="1111">
+                        </div>
+                    </div>
+                    <button type="submit">Sign up</button>
+                    <div class="note">
+                        Do you have already an account? <a href="login.html">Log in</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <p class="note">
+                ©2022 TakeASeat. All rights reserved
+            </p>
+            <img alt="Line" src="../images/line.svg">
+            <div class="social-media">
+                <img class="icon" alt="twitter" src="../images/twitter.svg">
+                <img class="icon" alt="facebook" src="../images/facebook.svg">
+                <img class="icon" alt="instagram" src="../images/instagram.svg">
+                <img class="icon" alt="linkedIn" src="../images/linkedin.svg">
+                <img class="icon" alt="youtube" src="../images/youtube.svg">
+            </div>
+        </footer>
+        <script src="/js/signup.js"></script>
+    </body>
 
 </html>
