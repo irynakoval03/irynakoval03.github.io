@@ -1,0 +1,25 @@
+{
+  "name": "irynakoval03.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.js --ignore-pattern node_modules/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irynakoval03/irynakoval03.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irynakoval03/irynakoval03.github.io/issues"
+  },
+  "homepage": "https://github.com/irynakoval03/irynakoval03.github.io#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-plugin-react": "^7.29.4",
+    "hint": "^6.1.12"
+  }
+}

@@ -158,4 +158,9 @@ img {
 
 .logo {
   margin: auto 0px auto 25px;
+  transform: rotate(-15deg);
+  transition: all 1s;
+}
+.logo:hover {
+  transform: rotate(15deg);
 }/*# sourceMappingURL=login-signup.css.map */

@@ -44,6 +44,7 @@ button, .on-page {
 button:hover, .on-page:hover {
   background-color: rgba(255, 255, 255, 0);
   color: #6A3D38;
+  border-color: rgba(255, 255, 255, 0);
 }
 
 .on-page {
@@ -159,7 +160,7 @@ ul {
 .desk .container .card h3 {
   font-family: "BIZ UDPMincho", serif;
   margin: 0 0 0 0;
-  padding: 5px 0;
+  padding: 0;
 }
 .desk .container .card .field {
   max-width: auto;
@@ -168,7 +169,7 @@ ul {
   align-items: center;
 }
 .desk .container .card .field input {
-  width: 140px;
+  width: 100px;
   margin: 0px;
   border-radius: 20px;
   padding: 5px 10px;
@@ -178,7 +179,7 @@ ul {
 .desk .container .card .top {
   display: flex;
   flex-direction: row;
-  height: 20px;
+  height: 30px;
 }
 .desk .container .card .top .circle {
   display: flex;
@@ -193,16 +194,17 @@ ul {
 
 .action {
   margin: 0px 0px;
+  padding: 5px 0px;
   width: 20px;
   height: 100%;
   border: none;
   display: flex;
-  align-items: end;
-  align-content: end;
+  justify-content: space-around;
   background-color: #9B88E6;
 }
 .action:hover {
   background-color: #9B88E6;
+  border-color: rgba(255, 255, 255, 0);
 }
 .action img {
   margin: 0px;
