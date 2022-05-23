@@ -358,12 +358,13 @@ main {
   color: #ffeed5;
   height: auto;
   width: 100%;
+  margin: 5px;
 }
 
 .card {
   float: left;
   display: flex;
-  min-width: 100px;
+  max-width: 150px;
   flex-direction: column;
   align-items: center;
   align-content: center;
@@ -401,7 +402,7 @@ main {
 .top {
   display: flex;
   flex-direction: row;
-  height: 5px;
+  height: 20px;
 }
 .top .circle {
   display: flex;
@@ -458,7 +459,7 @@ label {
 }
 
 @media screen and (max-width: 1130px) {
-  .container {
+  #main {
     display: none;
   }
 

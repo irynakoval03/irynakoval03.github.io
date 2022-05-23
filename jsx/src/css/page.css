@@ -1,16 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Cinzel&family=Cormorant:ital,wght@0,300;0,400;1,300&family=IBM+Plex+Serif:wght@100&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
 header {
+  z-index: 1;
   background-color: #ffeed5;
   opacity: 0.7;
   top: 0;
   width: 100%;
-  height: 80px;
-  position: fixed;
+  height: auto;
+  position: -webkit-sticky;
+  position: sticky;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,18 +15,21 @@ header {
   font-family: "Cinzel", serif;
   margin: 0 0 5px 0;
 }
+header .but {
+  margin: auto 10px auto auto;
+}
 
-.but-group {
+#but-group {
   display: flex;
   flex-direction: column;
   margin: 0 0 5px 0;
 }
 
-button, .free, .book, .on-page {
+button, .on-page {
   height: 40px;
   width: 120px;
-  padding: 0 0 0 0;
-  margin: 5px 15px 0px auto;
+  padding: 0px 15px;
+  margin: 5px 5px;
   align-items: center;
   align-content: center;
   border-radius: 20px;
@@ -37,47 +37,27 @@ button, .free, .book, .on-page {
   border-color: #6A3D38;
   border-width: 2px;
   color: #ffeed5;
-  font-family: "Cormorant", serif;
   font-size: large;
   font-weight: 300;
   font-family: "BIZ UDPMincho", serif;
 }
-button:hover, .free:hover, .book:hover, .on-page:hover {
+button:hover, .on-page:hover {
   background-color: rgba(255, 255, 255, 0);
   color: #6A3D38;
 }
 
+#click {
+  transition: 0.15s;
+}
+#click:hover {
+  transition-duration: 0.3s;
+  box-shadow: 0 5px 10px 0 #333333, 0 4px 12px 0 #333333;
+}
+
 .on-page {
-  width: 180px;
+  width: 190px;
   font-size: medium;
   margin: 3px 0px;
-}
-
-.book {
-  width: 180px;
-  font-size: medium;
-  margin: 3px 0px;
-  right: 0px;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  display: inline-block;
-}
-
-.free {
-  font-family: "BIZ UDPMincho", serif;
-  padding: 5px 0;
-  width: 150px;
-  height: 100%;
-  background-color: #A23C3F;
-}
-.free:hover {
-  background-color: rgba(255, 255, 255, 0);
-  color: #A23C3F;
 }
 
 .heading {
@@ -85,83 +65,71 @@ button:hover, .free:hover, .book:hover, .on-page:hover {
   margin: 10px;
 }
 
-h4 {
-  font-family: "Cormorant", serif;
-  margin: 0 0 0 0;
-  padding: 2px 0;
-}
-
-h3 {
-  font-family: "BIZ UDPMincho", serif;
-  margin: 0 0 0 0;
-  padding: 5px 0;
-}
-
-body {
-  background-color: white;
-  text-align: center;
-  font-family: "Cormorant", serif;
-  color: #6A3D38;
-  margin: 0px auto 0px auto;
-  height: 100vh;
-  display: inline-block;
-}
-
 .background {
-  background: url(../images/back_main.jpg);
+  background: url(../../public/images/back_main.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
   align: center;
   overflow-x: hidden;
+  background-color: white;
+  text-align: center;
+  font-family: "Cormorant", serif;
+  color: #6A3D38;
+  margin: 0 0 0 0;
+  height: 100vh;
+  display: inline;
+}
+.background h3 {
+  font-family: "BIZ UDPMincho", serif;
 }
 
 footer {
   color: #6A3D38;
   background-color: #ffeed5;
   opacity: 0.7;
-  margin: 5px 0px 0px 0px;
+  margin: 5px 0 0 0;
   bottom: 0px;
   position: fixed;
   width: 100%;
   flex-direction: column;
 }
+footer p .note {
+  margin: 0 0 0 0;
+}
 
-.store {
+.presentation {
   background-color: #ffeed5;
   opacity: 0.95;
   max-width: 600px;
+  min-width: 205px;
   border-radius: 20px;
-  margin: 150px 70px 150px 70px;
+  margin: 70px 70px 150px 70px;
   padding: 30px 20px 10px 20px;
   display: flex;
   align-items: center;
   align-content: center;
   flex-direction: column;
 }
-.store .search {
-  padding: 15px 0px 0px 0px;
-}
-.store .search .line {
-  display: flex;
-  flex-direction: row;
-}
-.store input {
-  height: 40px;
-  padding: 0 0 0 0;
-  margin: 5px 15px 0px auto;
-  border-radius: 20px;
-  padding: 5px 10px;
+
+ul {
+  margin: 10px;
+  padding: 0px 0 0px 0px;
+  list-style-type: none;
   font-family: "Cormorant", serif;
   font-size: large;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .desk {
   position: relative;
-  max-width: 1000px;
+  max-width: 830px;
   border-radius: 20px;
   padding: 30px 10px 10px 10px;
-  margin: 150px 70px 150px 70px;
+  margin: 70px 70px 150px 70px;
   background-color: #6A3D38;
   color: #ffeed5;
   opacity: 0.8;
@@ -171,12 +139,11 @@ footer {
   align-content: center;
   display: inline-block;
 }
-
-.container {
+.desk .container {
   color: #ffeed5;
   height: auto;
 }
-.container .card {
+.desk .container .card {
   float: left;
   display: flex;
   min-width: 150px;
@@ -189,26 +156,41 @@ footer {
   margin: 5px 10px;
   padding: 10px;
 }
-.container .card .field {
+.desk .container .card h4 {
+  font-family: "Cormorant", serif;
+  margin: 0 0 0 0;
+  padding: 2px 0;
+}
+.desk .container .card h3 {
+  font-family: "BIZ UDPMincho", serif;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+.desk .container .card .new-aud {
   max-width: auto;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align: center;
 }
-.container .card .field input {
-  width: 140px;
-  margin: 0px;
+.desk .container .card .new-aud label {
+  margin: -2px 2px 0 0;
+}
+.desk .container .card .new-aud #audName {
+  width: 100px;
+  margin: 2px 0 0 0;
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 3px 5px;
   font-family: "Cormorant", serif;
   font-size: medium;
 }
-.container .card .top {
+.desk .container .card .top {
   display: flex;
   flex-direction: row;
-  height: 15px;
+  height: 30px;
 }
-.container .card .top .circle {
+.desk .container .card .top .circle {
   display: flex;
   align-items: start;
   align-content: start;
@@ -221,16 +203,17 @@ footer {
 
 .action {
   margin: 0px 0px;
+  padding: 5px 0px;
   width: 20px;
   height: 100%;
   border: none;
   display: flex;
-  align-items: end;
-  align-content: end;
+  justify-content: space-around;
   background-color: #9B88E6;
 }
 .action:hover {
   background-color: #9B88E6;
+  border-color: rgba(255, 255, 255, 0);
 }
 .action img {
   margin: 0px;
@@ -243,6 +226,7 @@ main {
   margin: 0 0 0 0;
   position: relative;
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   align-items: flex-start;
   align-content: flex-start;
@@ -258,34 +242,49 @@ img {
 
 .logo {
   margin: auto 0px auto 25px;
+  transform: rotate(-15deg);
+  transition: all 1s;
+}
+.logo:hover {
+  transform: rotate(15deg);
 }
 
 @media screen and (max-width: 705px) {
   .desk {
     max-width: 205px;
-    margin-top: 150px;
-    margin-right: 70px;
-    margin-left: auto;
+    margin-left: 4px;
   }
 
   .presentation {
     max-width: 220px;
-    margin-top: 150px;
-    margin-left: 70px;
-    margin-right: 8px;
+    margin-right: 4px;
   }
 }
-a {
-  color: #A23C3F;
-  text-decoration: none;
+.head-but {
+  border: none;
+  border-color: rgba(255, 255, 255, 0);
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin: 10px 5px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0);
 }
-a:hover {
-  text-decoration: none;
-  color: #F7A438;
+.head-but:hover {
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
+  margin: 10px 5px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border: none;
 }
-
-.owner {
-  font-size: 18px;
-  padding: 2px 0;
-  float: right;
-}/*# sourceMappingURL=reservation.css.map */
+.head-but .func {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  width: 30px;
+  height: 30px;
+}/*# sourceMappingURL=page.css.map */
