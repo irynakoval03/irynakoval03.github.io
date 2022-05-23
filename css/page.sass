@@ -44,7 +44,7 @@ button
 
 .on-page
     @extend button
-    width: 180px
+    width: 190px
     font-size: medium
     margin: 3px 0px
 
@@ -52,7 +52,13 @@ button
     font-size: xx-large
     margin: 10px
 
-body
+.background
+    background: $gray-background
+    background-repeat: no-repeat
+    background-size: 100% 100%
+    background-attachment: fixed
+    align: center
+    overflow-x: hidden
     background-color: white
     text-align: center
     font-family: $font
@@ -62,14 +68,6 @@ body
     display: inline
     h3
         font-family: $head-font
-
-.background
-    background: $gray-background
-    background-repeat: no-repeat
-    background-size: 100% 100%
-    background-attachment: fixed
-    align: center
-    overflow-x: hidden
 
 footer
     color: $dark-color
@@ -128,7 +126,7 @@ ul
         .card
             float: left
             display: flex
-            min-width: 150px
+            max-width: 150px
             flex-direction: column
             align-items: flex-start
             align-content: flex-start
@@ -143,7 +141,7 @@ ul
                 padding: 2px 0
             h3
                 font-family: $head-font
-                margin: 0 0 0 0
+                margin: 5px 0
                 padding: 0
             .field
                 max-width: auto
@@ -157,19 +155,20 @@ ul
                     padding: 5px 10px
                     font-family: $font
                     font-size: medium
-            .top
-                display: flex
-                flex-direction: row
-                height: 30px
-                .circle
-                    display: flex
-                    align-items: start
-                    align-content: start
-                    background-color: $link-hover-color
-                    border-radius: 5px
-                    margin: 0px 110px 0px 0px
-                    width: 10px
-                    height: 10px
+.top
+    display: flex
+    flex-direction: row
+    height: 20px
+    .circle
+        display: flex
+        align-items: start
+        align-content: start
+        background-color: $link-hover-color
+        border-radius: 5px
+        margin: 0px 110px 0px 0px
+        width: 10px
+        height: 10px
+
 .action
     margin: 0px 0px
     padding: 5px 0px
@@ -213,6 +212,7 @@ img
 @media screen and (max-width: 705px)
     .desk
         max-width: 205px
+        height: auto
         margin-left: 4px
     .presentation
         max-width: 220px
@@ -243,3 +243,7 @@ img
         padding: 0 0 0 0
         width: 30px
         height: 30px
+
+// .right
+//     display: flex
+//     align-content: flex-start

@@ -48,7 +48,7 @@ button:hover, .on-page:hover {
 }
 
 .on-page {
-  width: 180px;
+  width: 190px;
   font-size: medium;
   margin: 3px 0px;
 }
@@ -58,7 +58,13 @@ button:hover, .on-page:hover {
   margin: 10px;
 }
 
-body {
+.background {
+  background: url(../images/back_main.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  align: center;
+  overflow-x: hidden;
   background-color: white;
   text-align: center;
   font-family: "Cormorant", serif;
@@ -67,17 +73,8 @@ body {
   height: 100vh;
   display: inline;
 }
-body h3 {
+.background h3 {
   font-family: "BIZ UDPMincho", serif;
-}
-
-.background {
-  background: url(../images/back_main.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-attachment: fixed;
-  align: center;
-  overflow-x: hidden;
 }
 
 footer {
@@ -142,7 +139,7 @@ ul {
 .desk .container .card {
   float: left;
   display: flex;
-  min-width: 150px;
+  max-width: 150px;
   flex-direction: column;
   align-items: flex-start;
   align-content: flex-start;
@@ -159,7 +156,7 @@ ul {
 }
 .desk .container .card h3 {
   font-family: "BIZ UDPMincho", serif;
-  margin: 0 0 0 0;
+  margin: 5px 0;
   padding: 0;
 }
 .desk .container .card .field {
@@ -176,12 +173,13 @@ ul {
   font-family: "Cormorant", serif;
   font-size: medium;
 }
-.desk .container .card .top {
+
+.top {
   display: flex;
   flex-direction: row;
-  height: 30px;
+  height: 20px;
 }
-.desk .container .card .top .circle {
+.top .circle {
   display: flex;
   align-items: start;
   align-content: start;
@@ -243,6 +241,7 @@ img {
 @media screen and (max-width: 705px) {
   .desk {
     max-width: 205px;
+    height: auto;
     margin-left: 4px;
   }
 
