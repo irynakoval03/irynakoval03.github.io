@@ -5,9 +5,12 @@ const Login = () => {
         e.preventDefault();
         let username = document.getElementById("username").value;
         let password = document.getElementById("password").value;
+        console.log(username, password)
         fetch(`http://127.0.0.1:5000/user/${username}`, {
             method: "GET",
-            headers: { 'Authorization': 'Basic ' + window.btoa(username + ":" + password) }
+            headers: {
+                'Authorization': 'Basic ' + window.btoa(username + ":" + password)
+            }
         })
             .then((response) => response.json())
             .then((response) => {
@@ -21,19 +24,19 @@ const Login = () => {
             .then((data) => {
                 localStorage.setItem("password", JSON.stringify(password));
                 localStorage.setItem("user", JSON.stringify(data));
-                console.log(data);
+                // console.log(data);
                 if (data.username === 'moderator') { window.open("/mod_page", "_self"); }
                 else { window.open("/my_page", "_self"); }
             }
             )
             .catch((error) => {
-                alert(error.description)
-                console.error(error);
+                alert('Username or/and password are incorrect!')
+                console.error(error.description);
             });
 
     }
     return (
-        <div className="background">
+        <div className="mbackground">
             <header>
             <img className="icon logo" src="/images/logo_hour.svg" alt="Logo"/>
             <h1 className="heading" >BookASpace</h1>

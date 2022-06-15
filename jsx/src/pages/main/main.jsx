@@ -1,18 +1,23 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import '../../css/main.css';
 
-
+const URL = 'ws://127.0.0.1:8080';
+    
 const Main = () => {
 
     const user = JSON.parse(localStorage.getItem('user'));
     const password = JSON.parse(localStorage.getItem('password'));
     const [begin, setBegin] = useState({});
     const [end, setEnd] = useState({});
-    const [aud_name, setAudName] = useState({});
+    const [aud_name, setAudName] = useState('');
+    const [auditorium, setAud] = useState({})
     const [auditoriums, setAuds] = useState([]);
     const [aud_id, setAudId] = useState('');
+    const[st,setSt] = useState('available')
+    const [ws, setWs] = useState(new WebSocket(URL));
+
     const onChangeAudName = (e) => {
         const name = e.target.value;  
         setAudName(name);
@@ -25,39 +30,10 @@ const Main = () => {
         const end = e.target.value;
         setEnd(end);
     };
-    var note = document.getElementById('cards');
 
     const getAudId = () => {
-        fetch(`http://127.0.0.1:5000/auditorium/findByName/${aud_name}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then((response) => response.json())
-            .then((response) => {
-                if (response.code) {
-                    throw new Error(
-                        `${response.code} - ${response.description}`
-                    );
-                }
-                return response;
-            })
-            .then((aud) => {
-                console.log(`Chosen auditorium name: ${aud_name} - id: ${aud.audienceId}`);
-                // return aud
-                setAudId(aud.audienceId);
-                // return aud.audienceId;
-            })
-            .catch((error) => {
-                console.error(error);
-                // return null;
-            });
-    }
-
-    const getByStatus = (status) => {
-        if (!status) { status='available'}
-        fetch(`http://127.0.0.1:5000/auditorium/findByStatus/${status}`, {
+        if (aud_name!=='') {
+            fetch(`http://127.0.0.1:5000/auditorium/findByName/${aud_name}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -72,10 +48,40 @@ const Main = () => {
                     }
                     return response;
                 })
-                .then(auds => {
-                    console.log(`${status} :`,auds);
+                .then((aud) => {
+                    console.log(`Chosen auditorium name: ${aud_name} - id: ${aud.audienceId}`);
+                    setAudId(aud.audienceId)
+                    setAud(aud)
+                })
+                .catch((error) => {
+                    console.error(error);
+                    // return null;
+                });
+        }
+    }
+
+    const getByStatus = (status) => {
+        if (!status) { status = 'available' }
+        setSt(status)
+        console.log(`const -${st}, var - ${status}`)
+        fetch(`http://127.0.0.1:5000/auditorium/findByStatus/${st}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((response) => response.json())
+                .then((response) => {
+                    if (response.code) {
+                        throw new Error(
+                            `${response.code} - ${response.description}`
+                        );
+                    }
+                    return response;
+                })
+            .then(auds => {
                     setAuds(auds);
-                    // setFree(auds);
+                    console.log(`${st} :`, auds);
                 }
                 )
                 .catch((error) => {
@@ -84,13 +90,30 @@ const Main = () => {
     }
     
     useEffect(() => {
-        getAudId();
-        getByStatus();
-        // isLoggedIn();
+            getAudId();
+            getByStatus();
     }, []);
+
+    useEffect(() => {
+        ws.onopen = () => {
+            console.log('WebSocket Connected');
+        }
+
+        ws.onmessage = (e) => {
+            console.log(`Operate with ${auditorium.name}`);
+            getByStatus(st);        
+        }
+
+        return () => {
+            ws.onclose = () => {
+                console.log('WebSocket Disconnected');
+                setWs(new WebSocket(URL));
+            }
+        }
+    }, [ws.onmessage, ws.onopen, ws.onclose, auditoriums]);
     
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         getAudId();
         if (aud_id)
         {
@@ -118,6 +141,8 @@ const Main = () => {
                         return response;
                     })
                     .then((data) => {
+                        ws.send(auditorium);
+                        getByStatus(st);
                         console.log(`Auditorium ${aud_name}(id : ${data.audienceId}) has just booked!`);
                         alert('Successfully booking!')
                         window.open("/my_page", "_self");
@@ -146,7 +171,7 @@ const Main = () => {
                     <img className="icon logo" src="/images/logo_hour.svg" alt="Logo" />
                     <h1 className="heading">BookASpace</h1>
                     { user!==null ?(
-                        <><button className="button head-but" onClick={() => { window.open("/main", "_self"); }}><img alt="booking" className="func" src="/images/book.svg" /></button><button className="button head-but" onClick={() => { if (user.username !== 'moderador') { window.open("/mod_page", "_self"); } else {window.open("/my_page", "_self"); } } }><img alt="user" className="func" src="/images/user.svg" /></button><div className="but">
+                        <><button className="button head-but" onClick={() => { window.open("/main", "_self"); }}><img alt="booking" className="func" src="/images/book.svg" /></button><button className="button head-but" onClick={() => { window.open("/my_page", "_self"); } }><img alt="user" className="func" src="/images/user.svg" /></button><div className="but">
                             <button className="button" id='click' onClick={() => { logout(); } }>Logout</button>
                         </div></>):(<div className="but-group">
                     <button  id="click" href='/login' onClick={() => { window.location.href = '/login' }}>Login</button>
@@ -160,7 +185,11 @@ const Main = () => {
                         <h4 className="limit">*it is allowed to book for time f<div className="out">rom 1 hour to 5 day</div>s</h4>
                         <div className="line">
                             <div className="form">
-                                <form onSubmit={handleSubmit}>
+                                <form onSubmit={e => {
+                                    e.preventDefault();
+                                    handleSubmit();
+                                    setAud('');
+                                }}>
                                     <h3 className="heading">
                                         Book an auditorium
                                     </h3>

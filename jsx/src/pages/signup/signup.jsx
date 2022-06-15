@@ -46,7 +46,7 @@ const Signup = () => {
 
     }
     return (
-        <div className="background">
+        <div className="mbackground">
             <header>
                 <img className="icon logo" src='/images/logo_hour.svg' alt="Logo"/>
                 <h1 className="heading">BookASpace</h1>
